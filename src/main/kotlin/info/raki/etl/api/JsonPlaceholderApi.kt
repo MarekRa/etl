@@ -28,7 +28,7 @@ class JsonPlaceholderApi(private val urlString: String) {
         logger.info("Reading posts, page: $page, limit: $limit")
         val response = client.get("/posts") {
             url {
-                parameters.append("_page", "$page")
+                parameters.append("_page", "${page + 1}")
                 parameters.append("_limit", "$limit")
             }
         }
